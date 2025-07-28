@@ -1,0 +1,574 @@
+/* tugas.css */
+
+/* Global Reset and Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Penting: padding dan border tidak menambah lebar/tinggi elemen */
+  font-family: "Poppins", sans-serif; /* Perbaiki typo "poppins" menjadi "Poppins" */
+}
+
+/* Navbar Utama (Top Bar) */
+.navbar {
+  background: linear-gradient(180deg, #2c7be4 0%, #18447e 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Pastikan di atas semua elemen lain */
+  height: 70px; /* Tambahkan tinggi eksplisit untuk navbar */
+  display: flex; /* Untuk memudahkan alignment vertikal navdiv */
+  align-items: center; /* Menengahkan navdiv secara vertikal */
+}
+
+.navdiv {
+  display: flex;
+  justify-content: space-between; /* Kiri dan kanan berjauhan */
+  align-items: center;
+  padding: 0 20px;
+  width: 100%; /* Agar navdiv mengisi seluruh lebar navbar */
+}
+
+.navdiv .kiri,
+.navdiv .kanan {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antar item */
+  color: #fff;
+  margin: 15px 20px;
+}
+
+.navdiv .icon-menu {
+  height: 15px;
+  width: auto;
+}
+
+.navdiv .logo-ebadu {
+  height: 30px;
+  width: auto;
+}
+
+.navdiv .text-sma {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.navdiv .text-user {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 350;
+}
+
+.navdiv .ellipse {
+  height: 40px;
+  width: auto;
+}
+
+.navdiv .icon-notifikasi {
+  height: 20px;
+  width: auto;
+}
+
+/* ========================================================= */
+/* BAGIAN SIDEBAR (TIDAK ADA PERUBAHAN DARI KODE ASLI ANDA) */
+/* ========================================================= */
+.sidebar {
+  width: 232px;
+  height: 100vh;
+  background-color: #1c1c1c;
+  position: fixed;
+  top: 70px; /* Posisi asli Anda: Dimulai setelah navbar utama */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* Posisi asli Anda: jarak dari navbar */
+  z-index: 500;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Posisi asli Anda */
+  height: 77%;
+}
+
+.item-menu {
+  display: flex;
+  align-items: center;
+  margin: 20px 45px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 350;
+}
+
+img.icon-menu {
+  width: 20px;
+  height: auto;
+  margin-right: 12px;
+}
+
+img.icon-back {
+  width: 15px;
+  height: auto;
+  margin-right: 0px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  margin: 20px 45px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  margin-top: auto;
+}
+/* ========================================================= */
+/* AKHIR BAGIAN SIDEBAR */
+/* ========================================================= */
+
+/* Kunci utama untuk layout konten di sebelah kanan sidebar */
+/* Semua elemen ini akan dimulai setelah sidebar dan mengisi sisa lebar layar */
+.navbar2,
+.filter,
+.cards-container,
+.identitas {
+  margin-left: 232px; /* Dorong ke kanan sejauh lebar sidebar */
+  width: calc(100% - 232px); /* Isi sisa lebar layar */
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+  /* *** PENTING: Pastikan nilai padding horizontal ini sama untuk semua! *** */
+  padding-left: 85px; /* Padding kiri yang konsisten */
+  padding-right: 85px; /* Padding kanan yang konsisten */
+}
+
+/* Navbar Kedua (Main Content Top Bar) */
+.navbar2 {
+  margin-top: 70px; /* Diberi jarak dari navbar utama */
+  background-color: #18447e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px; /* Padding atas-bawah */
+  padding-bottom: 15px; /* Padding atas-bawah */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info .user {
+  margin: 0;
+  color: #fff;
+}
+
+.user p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+/* Filter Section (Buttons and Search Bar) */
+.filter {
+  display: flex;
+  align-items: center; /* Mensejajarkan item di tengah secara vertikal */
+  justify-content: space-between; /* Untuk memisahkan grup tombol dan search bar */
+  padding-top: 38px; /* Padding atas-bawah */
+  padding-bottom: 15px; /* Padding atas-bawah */
+}
+
+.card-button {
+  display: flex;
+  align-items: center; /* Pastikan tombol di dalamnya sejajar */
+  height: 40px; /* Tinggi konsisten dengan search-container */
+  gap: 0; /* Gap antar tombol diatur per button */
+  border: none;
+}
+
+.btn-semua,
+.btn-belum,
+.btn-sudah {
+  background-color: #5a6268;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  height: 40px; /* Penting: Pastikan tinggi tombol sama dengan search bar */
+  display: flex; /* Untuk menengahkan teks vertikal */
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-semua {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-sudah {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn-semua:hover,
+.btn-belum:hover,
+.btn-sudah:hover {
+  background-color: #2c7be4;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 40px; /* Pastikan tinggi ini konsisten dengan tombol filter */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  width: 500px;
+}
+
+.search-container input {
+  flex: 1; /* Input mengisi sisa ruang */
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  height: 100%; /* Input mengisi tinggi search-container */
+  box-sizing: border-box;
+  border-radius: 5px; /* Agar border-radius input konsisten */
+}
+
+.search-container button {
+  width: 50px;
+  height: 100%; /* Tombol mengisi tinggi search-container */
+  background-color: #4a535c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-container img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Cards Container (List of Tasks) */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Jarak antar card */
+  padding-top: 25px; /* Padding atas-bawah */
+  padding-bottom: 25px; /* Padding atas-bawah */
+}
+
+.card {
+  width: 100%; /* Card mengisi 100% lebar dari parentnya (cards-container) */
+  /* Hapus atau sesuaikan max-width ini jika Anda ingin card selalu mengisi 100% dari ruang yang tersedia. */
+  /* Jika Anda ingin batasan, pertahankan, tetapi pastikan nilainya logis. */
+  /* max-width: 1080px; */
+  margin: 0 auto; /* Menengahkan card di dalam cards-container jika ada sisa ruang */
+
+  height: 230px;
+  flex-direction: column;
+  background: #fff;
+  color: #555;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #999999;
+  overflow: hidden;
+  padding: 0; /* Padding internal diatur pada elemen anak */
+}
+
+.card-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px; /* Padding internal untuk konten card-text */
+}
+
+.card-text p {
+  font-size: 20px;
+  font-weight: 500;
+  margin:  15px 0; /* Hapus margin yang tidak perlu di sini */
+  font-weight: 400;
+}
+
+.cek-button {
+  height: 50px;
+  display: flex;
+  gap: 0px; /* Jarak antar tombol Open/Detail */
+  border: none;
+}
+
+.btn-open {
+  background-color: #fffacc;
+  color: #a57b26;
+  border: 1px solid #a57b26;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: 400;
+}
+
+.btn-open:hover {
+  background-color: #ffe08a; /* Sedikit lebih gelap saat hover */
+}
+
+.btn-detail {
+  background-color: #00d27a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: 400;
+}
+
+.btn-detail:hover {
+  background-color: #00b064; /* Sedikit lebih gelap saat hover */
+}
+
+.card-informasi {
+  height: 150px;
+  background: #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px; /* Padding internal untuk konten card-informasi */
+}
+
+.card-informasi img {
+  width: 40px;
+  height: auto;
+  margin-left: 0; /* Setel ulang margin-left */
+}
+
+.card-guru {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Jarak antara gambar guru dan info teks */
+}
+
+.card-guru h3 {
+  margin: 0;
+  font-size: 12px;
+  color: #000;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.card-guru p {
+  margin: 0;
+  font-size: 12px;
+  color: #000;
+  font-weight: 350;
+}
+
+.card-infoguru {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-deadline {
+  align-items: center;
+  background-color: #fff;
+  height: 40px;
+  display: flex;
+  gap: 5px; /* Jarak antar elemen di dalam card-deadline */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.card-deadline p {
+  color: #2c7be4;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.card-deadline h3 {
+  display: flex; /* Untuk menengahkan teks deadline jika perlu */
+  align-items: center;
+  height: 40px; /* Ini akan membuat teks memiliki tinggi 40px */
+  color: #000;
+  font-weight: 400;
+  font-size: 12px;
+  padding: 0 10px; /* Padding horizontal agar teks tidak menempel */
+    border-right: 1.5px solid #999999;
+  
+}
+
+/* Footer */
+.identitas {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  margin-top: 50px; /* Jarak dari konten di atasnya */
+}
+
+/* Basic Responsiveness (Optional, but recommended) */
+@media (max-width: 768px) {
+  /* Bagian sidebar tidak diubah sama sekali untuk mobile */
+
+  /* Reset margin-left dan width untuk semua elemen konten utama di mobile */
+  .navbar2,
+  .filter,
+  .cards-container,
+  .identitas {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 20px; /* Kurangi padding untuk layar kecil */
+    padding-right: 20px; /* Kurangi padding untuk layar kecil */
+  }
+
+  .navdiv .kanan {
+    gap: 10px;
+  }
+
+  .navdiv .text-sma {
+    font-size: 16px;
+  }
+
+  .navdiv .text-user {
+    font-size: 14px;
+  }
+
+  .filter {
+    flex-direction: column; /* Tombol dan search bar menjadi vertikal */
+    align-items: flex-start; /* Sejajarkan ke kiri */
+    gap: 15px; /* Jarak antar grup tombol dan search bar */
+  }
+
+  .card-button {
+    flex-wrap: wrap; /* Tombol bisa pecah baris */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-semua,
+  .btn-belum,
+  .btn-sudah {
+    width: auto;
+    flex: 1; /* Biarkan tombol berbagi ruang */
+    margin-bottom: 5px; /* Jarak antar tombol jika pecah baris */
+    /* Pastikan radius pada semua sisi jika sudah pecah baris */
+    border-radius: 5px !important;
+  }
+
+  .search-container {
+    width: 100%; /* Search bar mengisi penuh */
+  }
+
+  .cards-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .card {
+    max-width: 100%; /* Card mengisi penuh */
+  }
+
+  .card-text,
+  .card-informasi {
+    flex-direction: column; /* Konten card menjadi vertikal */
+    align-items: flex-start;
+    padding-left: 20px; /* Kurangi padding internal card */
+    padding-right: 20px; /* Kurangi padding internal card */
+    gap: 10px; /* Jarak antar elemen di dalam card-text/informasi */
+  }
+
+  .card-text .cek-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .card-guru {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .card-informasi img {
+    margin-right: 0;
+  }
+
+  .card-deadline {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Styling dasar untuk ikon hamburger (menggantikan gambar) */
+.hamburger-menu {
+  width: 25px; /* Lebar ikon */
+  height: 20px; /* Tinggi total ikon */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Untuk memberi jarak antar bar */
+  cursor: pointer;
+  position: relative; /* Penting untuk animasi rotasi */
+  z-index: 1001; /* Pastikan di atas elemen lain */
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 100%;
+  height: 3px; /* Tinggi masing-masing bar */
+  background-color: #fff; /* Warna bar */
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* Animasi transisi halus */
+}
+
+/* Animasi saat menu AKTIF (kelas 'active' ditambahkan oleh JS) */
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0; /* Bar tengah menghilang */
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg); /* Bar atas bergeser dan berputar */
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg); /* Bar bawah bergeser dan berputar */
+}
+
+/* Optional: Untuk mengatur posisi sidebar saat hamburger aktif */
+/* Ini akan mendorong konten utama ke kanan saat sidebar terbuka */
+.sidebar.active {
+  left: 0; /* Pastikan sidebar terlihat */
+}
+
+/* Ubah juga lebar konten utama ketika sidebar terbuka/tertutup (jika sidebar juga dianimasikan) */
+/* Jika sidebar selalu terbuka seperti kasus Anda, abaikan bagian ini */
+/* Jika Anda ingin sidebar bisa disembunyikan/ditampilkan dengan hamburger,
+   maka Anda perlu memodifikasi .sidebar, .navbar2, .filter, dll.
+   saat .sidebar.active atau .body.sidebar-open.
+   Untuk saat ini, saya asumsikan sidebar selalu terlihat dan hamburger hanya indikator. */
+
+/* Jika ikon hamburger hanya untuk membuka/menutup sidebar,
+   kita perlu menyesuaikan posisi sidebar dan konten utama saat aktif */
+body.sidebar-open .sidebar {
+  left: 0; /* Tampilkan sidebar */
+}
+
+body.sidebar-open .navbar2,
+body.sidebar-open .filter,
+body.sidebar-open .cards-container,
+body.sidebar-open .identitas {
+  margin-left: 232px; /* Tetap di posisi normal, jika sidebar selalu terbuka */
+  /* Jika sidebar bisa disembunyikan, maka margin-left ini akan menjadi 0 */
+}

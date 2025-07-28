@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", "sans-serif";
+}
+
+.navbar {
+    background: linear-gradient(
+    180deg,               
+    #2C7BE4 0%,   
+    #18447E 100%
+    );
+    position: fixed;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navdiv {
+    display: flex;
+    justify-content: space-between; /* kiri dan kanan berjauhan */
+    align-items: center;
+    padding: 0 20px; 
+}
+
+.navdiv .kiri,
+.navdiv .kanan {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* jarak antar item */
+    color: #fff;
+    margin: 15px 20px;
+}
+
+.navdiv .icon-menu{
+    height: 15px;
+    width: auto;
+}
+
+.navdiv .logo-ebadu{
+    height: 30px;
+    width: auto;
+}
+
+.navdiv .text-sma{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.navdiv .text-user{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 350;
+}
+.navdiv .ellipse{
+    height: 40px;
+    width: auto;
+}
+
+.navdiv .icon-notifikasi{
+    height: 20px;
+    width: auto;
+}
+
+.sidebar {
+    width: 232px;
+    height: 100vh;
+    background-color: #1C1C1C;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* supaya ada jarak dari navbar */
+    z-index: 500;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    height: 77%;
+}
+
+.item-menu {
+    display: flex;
+    align-items: center;
+    margin: 20px 45px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 350;
+}
+
+img.icon-menu {
+    width: 20px;
+    height: auto;
+    margin-right: 12px;
+}
+
+img.icon-back {
+    width: 15px;
+    height: auto;
+    margin-right: 0px;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    margin: 20px 45px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: auto;
+}
+
+.navbar2{
+    margin-left: 232px; /* beri jarak dari sidebar */
+    margin-top: 70px;   /* beri jarak dari navbar */
+    background-color: #18447E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 85px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info .user{
+    margin: 0;
+    color: #fff;
+}
+
+.user p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 350;
+}
+
+.noting{
+   margin-left: 232px; /* beri jarak dari sidebar */
+    margin-top: 20px;   /* beri jarak dari navbar */
+    background-color: #D5E5FA;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 85px;
+} 
